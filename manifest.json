@@ -1,0 +1,45 @@
+﻿{
+  "name": "Parsif Batch Tick",
+  "version": "1.0.0",
+  "icons": {
+    "128": "icon64.png"
+  },
+  "permissions": [
+    "storage",
+    "tabs",
+    "activeTab",
+	"scripting"
+  ],"host_permissions": [
+    "*://*/*"
+  ] ,
+  "description": "Parsif Batch Tick",
+  "action":{
+    "default_icon":"icon64.png",
+    "default_title":"Parsif Batch Tick",
+	"default_popup": "popup.html"
+
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://parsif.al/*"
+      ],
+      "css": [
+        "layer/theme/default/layer.css"
+      ],
+      "js": [
+        "lib/jquery-3.3.1.min.js",
+        "layer/layer.js",
+        "js/u.js"
+      ],
+      "run_at": "document_end"
+    }
+  ],
+	"web_accessible_resources": [
+		{
+			"resources": ["*"],
+			"matches": ["<all_urls>"]
+		}
+	],
+  "manifest_version": 3
+}
